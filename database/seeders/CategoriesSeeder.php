@@ -17,12 +17,27 @@ class CategoriesSeeder extends Seeder
     {
         $dataSeeders = [
             [
-                'category_name' => 'Services',
+                'category_name' => 'Sofa',
                 'created_At' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
-                'category_name' => 'Products',
+                'category_name' => 'Bàn',
+                'created_At' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'category_name' => 'Ghế ',
+                'created_At' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'category_name' => 'Tủ ',
+                'created_At' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'category_name' => 'Giường',
                 'created_At' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

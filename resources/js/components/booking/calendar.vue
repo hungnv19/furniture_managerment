@@ -32,31 +32,23 @@ export default {
         initialView: "dayGridMonth",
         selectable: true,
         select: this.handleDateSelect,
-        events: this.getEvents,
+        events: this.handleEvent,
+        // events: this.events1,
         dateClick: this.handleDateClick,
-        // events: [
-        //   { title: "event 1", date: "2023-04-21" },
-        //   { title: "event 2", date: "2019-04-02" },
-        // ],
       },
-      events: [],
     };
   },
-  created() {
-    console.log(this.events);
-  },
-  mounted() {
-    this.getEvents();
-  },
+
   methods: {
     handleDateClick: function (arg) {
       alert("Date: " + arg.dateStr);
     },
-    getEvents() {
+    handleEvent() {
       axios
         .get("/get-booking")
         .then((response) => {
-          this.events = response.data;
+          this.events1 = response.data;
+          console.log(this.events1);
         })
         .catch();
     },
