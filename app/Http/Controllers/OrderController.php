@@ -21,10 +21,10 @@ class OrderController extends Controller
     }
     public function index()
     {
-        $orders = $this->order->join('customers', 'customers.id', '=', 'orders.customer_id')
-            ->select('orders.*', 'customers.name as customer_name')
+        $orders = $this->order->join('users', 'users.id', '=', 'orders.user_id')
+            ->select('orders.*', 'users.name as user_name')
             ->get();
-        return view('admin.order.index', [
+        return view('client.order.index', [
             'orders' => $orders,
             'title' => 'Order'
         ]);
@@ -67,11 +67,11 @@ class OrderController extends Controller
         
 
         $orders = DB::table('orders')
-            ->join('customers', 'orders.customer_id', 'customers.id')
+            ->join('users', 'orders.user_id', 'users.id')
             ->where('orders.id', $id)
-            ->select('customers.name', 'customers.phone', 'customers.address', 'orders.*')
+            ->select('users.name', 'users.phone', 'users.address', 'orders.*')
             ->first();
-        return view('admin.order.detail', [
+        return view('client.order.detail', [
             'details' => $details,
             'orders' => $orders,
             'title' => 'Chi tiet don hang',

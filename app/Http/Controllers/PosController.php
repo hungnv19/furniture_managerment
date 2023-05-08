@@ -20,7 +20,6 @@ class PosController extends BaseController
     {
         
         $products = Product::get();
-        // dd($products);
         return view('admin.pos.index', [
 
             'products' => $products,

@@ -7,6 +7,7 @@ use App\Http\Controllers\BaseController;
 use App\Models\Customer;
 use App\Models\GiftCard;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CartController extends BaseController
@@ -21,11 +22,11 @@ class CartController extends BaseController
 
 		$extra = DB::table('extra')->first();
 
-		$customers = Customer::select('id', 'name as label')->get();
-		return view('admin.cart.index', [
+		
+		return view('client.cart.index', [
 			'title' => 'Cart',
 			'pos' => $pos,
-			'customers' => $customers,
+			
 			'extra' => $extra,
 		]);
 	}
@@ -156,29 +157,30 @@ class CartController extends BaseController
 				'pos.*'
 			])
 			->get();
+		// dd($products);
 		return response()->json($products);
 	}
 	public function order(Request $request)
     {
         
-        try {
+        // try {
             DB::beginTransaction();
-            if ($request->gift_card_id) {
-                $giftCard = GiftCard::find($request->gift_card_id);
-                if (!$giftCard) {
-                    return response()->json(
-                        [
-                            'result' => false
-                        ],
-                        200
-                    );
-                }
-                $giftBalance = $giftCard->balance;
-                $giftCard->balance = $giftBalance >= $request->total ? $giftBalance - $request->total : 0;
-                $giftCard->save();
-            }
-            $data = [];
-            $data['customer_id'] = $request->customer_id;
+            // if ($request->gift_card_id) {
+            //     $giftCard = GiftCard::find($request->gift_card_id);
+            //     if (!$giftCard) {
+            //         return response()->json(
+            //             [
+            //                 'result' => false
+            //             ],
+            //             200
+            //         );
+            //     }
+            //     $giftBalance = $giftCard->balance;
+            //     $giftCard->balance = $giftBalance >= $request->total ? $giftBalance - $request->total : 0;
+            //     $giftCard->save();
+            // }
+            $data = [];	
+            $data['user_id'] = Auth::user()->id;
             $data['qty'] = $request->qty;
             $data['sub_total'] = $request->sub_total;
             $data['vat'] = $request->vat;
@@ -186,7 +188,7 @@ class CartController extends BaseController
             $data['pay'] = $request->pay;
             $data['due'] = $request->due;
             $data['payBy'] = $request->payBy;
-            $data['gift_card_id'] = $request->gift_card_id;
+          
             $data['order_date'] = date('d/m/Y');
             $data['order_month'] = date('F');
             $data['order_year'] = date('Y');
@@ -195,7 +197,7 @@ class CartController extends BaseController
             $order_id = DB::table('orders')->insertGetId($data);
 
             $cartContents = DB::table('pos')->get();
-
+			// dd($cartContents);
             $cartData = [];
             foreach ($cartContents as $content) {
                 $cartData['order_id'] = $order_id;
@@ -217,9 +219,10 @@ class CartController extends BaseController
            
             return redirect()->route('order.index');
            
-        } catch (\Exception $ex) {
-            DB::rollBack();
-            return redirect()->route('order.index');
-        }
+        // } catch (\Exception $ex) {
+        //     DB::rollBack();
+			
+        //     return redirect()->route('order.index');
+        // }
     }
 }

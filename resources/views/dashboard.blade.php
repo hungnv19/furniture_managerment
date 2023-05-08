@@ -110,8 +110,7 @@
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>{{ $customer }}</h3>
-
+                                    
                                     <p>Customer</p>
                                 </div>
                                 <div class="icon">

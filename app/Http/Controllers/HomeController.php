@@ -11,13 +11,13 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public User $user;
-    public Customer $customer;
+  
     public Product $product;
     public Category $category;
 
-    public function __construct(User $user, Customer $customer, Product $product, Category $category)
+    public function __construct(User $user, Product $product, Category $category)
     {
-        $this->customer = $customer;
+       
         $this->product = $product;
         $this->user = $user;
         $this->category = $category;
@@ -30,10 +30,10 @@ class HomeController extends Controller
             ->get();
         $user = User::count();
         $category = Category::count();
-        $customer = Customer::count();
+        
         return view('dashboard', [
             'title' => 'Trang quản trị',
-            'customer' => $customer,
+           
             'products' => $products,
             'product' => $product,
             'user' => $user,
