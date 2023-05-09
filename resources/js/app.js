@@ -5,7 +5,7 @@ import { createApp } from 'vue';
 import $ from "jquery";
 import { configure, defineRule } from "vee-validate";
 
-
+import UserProfile from './components/profile/index.vue';
 
 import DashBroad from './components/DashBroad.vue';
 
@@ -89,6 +89,6 @@ app.component("data-empty", DataEmpty);
 app.component("login-form", LoginForm);
 app.component("register-form", RegisterForm);
 
-
+app.component("user-profile", UserProfile);
 
 app.mount("#app");

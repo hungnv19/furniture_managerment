@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->name('')->group(function () {
-  
+
     Route::get('/', [ClientController::class, 'index'])->name('home');
 
     Route::get('/about', function () {
@@ -57,6 +57,10 @@ Route::middleware('user')->group(function () {
 
     //Order
     Route::resource('order', OrderController::class);
+
+    //profile
+    Route::get('/profile', [ClientController::class, 'profile'])->name('profile');
+    Route::post('/profile', [ClientController::class, 'updateProfile'])->name('profile-update');
 });
 
 
