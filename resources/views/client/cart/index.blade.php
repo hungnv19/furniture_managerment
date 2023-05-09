@@ -25,7 +25,6 @@
                 'pos' => $pos,
                 'extra' => $extra,
                 'urlStore' => route('cart.orders'),
-               
             ]) }}">
         </cart-list>
 

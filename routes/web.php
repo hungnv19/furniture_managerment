@@ -1,12 +1,9 @@
 <?php
 
-use App\Http\Controllers\BookingController;
+
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\CustomerGiftCardController;
-use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\GiftCardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -30,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('/')->name('')->group(function () {
+  
     Route::get('/', [ClientController::class, 'index'])->name('home');
 
     Route::get('/about', function () {

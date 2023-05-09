@@ -5,12 +5,13 @@
              <div class="col-lg-3 col-md-6 col-sm-6">
                  <div class="footer__about">
                      <div class="footer__logo">
-                         <a href="#"><img src="img/noi-that/logo.png" width="100px" alt=""></a>
+                         <a href="#"><img src="{{ asset('img/noi-that/logo.png') }}" width="100px"
+                                 alt=""></a>
                      </div>
                      <p>Nội thất Hàn Quốc Online Số 1 Tại Việt Nam.</p>
                      <p>Địa chỉ: Nam Từ Liêm - Hà Nội</p>
                      <p>Hotline: 0987654321</p>
-                     <a href="#"><img src="img/payment.png" alt=""></a>
+                     <a href="#"><img src="{{ asset('img/payment.png') }}" alt=""></a>
                  </div>
              </div>
              <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
