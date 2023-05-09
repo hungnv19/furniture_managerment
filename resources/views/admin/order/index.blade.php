@@ -26,8 +26,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">All Order</h3>
-                            {{-- <a class="btn btn-sm btn-primary" href="{{ route('product.create') }}"
-                                style="float: right;">Create</a> --}}
+                            
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -48,7 +47,7 @@
                                             @foreach ($orders as $order)
                                                 <tr>
                                                     <td>
-                                                        {{ $order->customer_name }}
+                                                        {{ $order->user_name }}
 
                                                     </td>
                                                     <td>

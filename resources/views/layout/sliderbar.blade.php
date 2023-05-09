@@ -41,42 +41,8 @@
 
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Pos
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('pos.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Pos </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                {{-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Booking
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('booking.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li> --}}
+                
+               
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -95,24 +61,7 @@
 
                     </ul>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Gift Card
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('gift-card.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List </p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li> --}}
+               
              
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -171,24 +120,7 @@
 
                     </ul>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Expense
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('expense.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>List</p>
-                            </a>
-                        </li>
-
-                    </ul>
-                </li> --}}
+               
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
